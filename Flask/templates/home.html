@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Human Development Index</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: radial-gradient(circle at top, #0b1440, #000010 75%);
+    color: #eaeaea;
+    min-height: 100vh;
+  }
+  nav {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 40px;
+  }
+  nav a {
+    background: linear-gradient(90deg, #8e2de2, #4a00e0);
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 22px;
+    border-radius: 30px;
+    font-weight: 600;
+    box-shadow: 0 0 15px rgba(142, 45, 226, 0.6);
+    transition: transform 0.2s ease;
+  }
+  nav a:hover { transform: translateY(-2px); }
+  .hero {
+    text-align: center;
+    padding: 20px 20px 60px;
+  }
+  .hero h1 {
+    font-size: 2.6rem;
+    color: #ff4d4d;
+    text-shadow: 0 0 20px rgba(255, 77, 77, 0.5);
+    margin-bottom: 10px;
+  }
+  .hero p.tag {
+    color: #b6ffb0;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+  .content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 30px 60px;
+    line-height: 1.7;
+    font-size: 1.05rem;
+  }
+  .content h2 {
+    color: #7fd8ff;
+    border-bottom: 1px solid rgba(127, 216, 255, 0.3);
+    padding-bottom: 8px;
+    margin-top: 40px;
+  }
+  .card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 22px 26px;
+    margin-top: 18px;
+  }
+  footer {
+    text-align: center;
+    color: #7a7a90;
+    padding: 30px;
+    font-size: 0.85rem;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/predict">Predict &rarr;</a>
+</nav>
+
+<div class="hero">
+  <h1>Human Development Index</h1>
+  <p class="tag">A Machine Learning Web Application Using Flask</p>
+</div>
+
+<div class="content">
+  <p>
+    The Human Development Index (HDI) is a statistical composite index of
+    life expectancy, education, and per-capita income indicators used to
+    rank countries into four tiers &mdash; Very High, High, Medium, and
+    Low &mdash; of human development. A country achieves a higher HDI
+    when its population enjoys a longer lifespan, better educational
+    attainment, and a higher Gross National Income (GNI PPP) per capita.
+  </p>
+  <p>
+    The HDI was developed to emphasize that people and their capabilities
+    should be the primary measure of a country's development rather than
+    economic growth alone.
+  </p>
+
+  <h2>What this app does</h2>
+  <div class="card">
+    Enter a country's socio-economic indicators &mdash; life expectancy,
+    mean years of schooling, expected years of schooling, GNI per capita,
+    and internet usage &mdash; and a trained Linear Regression model will
+    estimate its HDI score and classify it into one of four development
+    tiers.
+  </div>
+
+  <h2>How it was built</h2>
+  <div class="card">
+    Data was cleaned and explored with Pandas, Matplotlib, and Seaborn,
+    then used to train a Scikit-learn Linear Regression model. The model
+    was serialized with Pickle and is served here through a Flask
+    backend.
+  </div>
+</div>
+
+<footer>Human Development Index &mdash; ML Group Project</footer>
+
+</body>
+</html>

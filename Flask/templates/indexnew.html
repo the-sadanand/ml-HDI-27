@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Human Development Index - Predict</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: radial-gradient(circle at top, #0b1440, #000010 75%);
+    color: #eaeaea;
+    min-height: 100vh;
+    padding-bottom: 60px;
+  }
+  h1 {
+    text-align: center;
+    color: #ff4d4d;
+    text-shadow: 0 0 20px rgba(255, 77, 77, 0.5);
+    padding-top: 30px;
+  }
+  form {
+    max-width: 480px;
+    margin: 20px auto;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 30px;
+  }
+  label {
+    display: block;
+    margin: 14px 0 6px;
+    font-size: 0.9rem;
+    color: #a9d6ff;
+  }
+  select, input {
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 22px;
+    border: 1px solid rgba(127, 216, 255, 0.4);
+    background: rgba(0, 0, 0, 0.35);
+    color: #fff;
+    outline: none;
+    font-size: 0.95rem;
+  }
+  button {
+    width: 100%;
+    margin-top: 24px;
+    padding: 12px;
+    border: none;
+    border-radius: 24px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #fff;
+    background: linear-gradient(90deg, #4facfe, #8e2de2);
+    cursor: pointer;
+  }
+  button:hover { filter: brightness(1.1); }
+  .result {
+    max-width: 480px;
+    margin: 30px auto 0;
+    text-align: center;
+    background: #0d1117;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 26px;
+  }
+  .result h2 { color: #ff4d4d; margin-bottom: 4px; }
+  .result .score {
+    color: #ffe066;
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin-top: 10px;
+  }
+  .error {
+    max-width: 480px;
+    margin: 20px auto 0;
+    color: #ff8080;
+    text-align: center;
+  }
+  a.back {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #7fd8ff;
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+
+<h1>Human Development Index</h1>
+
+<form action="/predict" method="POST">
+  <label for="country">Select the name of the Country</label>
+  <select name="country" id="country" required>
+    <option value="" disabled {% if not selected_country %}selected{% endif %}>Select the name of the Country</option>
+    {% for c in countries %}
+      <option value="{{ c }}" {% if selected_country == c %}selected{% endif %}>{{ c }}</option>
+    {% endfor %}
+  </select>
+
+  <label for="life_expectancy">Enter life expectancy rate (range 30-89)</label>
+  <input type="number" step="0.1" min="30" max="89" name="life_expectancy" id="life_expectancy" required>
+
+  <label for="mean_years_schooling">Enter mean years of schooling (range 1-19)</label>
+  <input type="number" step="0.1" min="1" max="19" name="mean_years_schooling" id="mean_years_schooling" required>
+
+  <label for="expected_years_schooling">Enter expected years of schooling (range 1-19)</label>
+  <input type="number" step="0.1" min="1" max="19" name="expected_years_schooling" id="expected_years_schooling" required>
+
+  <label for="gni_per_capita">Enter GNI per capita (range 400-120000)</label>
+  <input type="number" step="1" min="400" max="120000" name="gni_per_capita" id="gni_per_capita" required>
+
+  <label for="internet_users_pct">Enter the percentage of internet users</label>
+  <input type="number" step="0.1" min="0" max="100" name="internet_users_pct" id="internet_users_pct" required>
+
+  <button type="submit">Predict</button>
+</form>
+
+{% if error %}
+  <div class="error">{{ error }}</div>
+{% endif %}
+
+{% if result %}
+  <div class="result">
+    <h2>Human Development Index</h2>
+    <p><em>A machine learning web application using Flask</em></p>
+    <div class="score">{{ result.category }} &mdash; {{ result.score }}</div>
+  </div>
+{% endif %}
+
+<a class="back" href="/">&larr; Back to Home</a>
+
+</body>
+</html>
