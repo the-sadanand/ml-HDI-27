@@ -10,19 +10,21 @@ expectancy, education, and income indicators. Built with **Scikit-learn**
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Project Structure](#project-structure)
-- [Entity-Relationship Diagram](#entity-relationship-diagram)
-- [Tech Stack](#tech-stack)
-- [Dataset](#dataset)
-- [Machine Learning Workflow](#machine-learning-workflow)
-- [Setup & Installation](#setup--installation)
-- [Running the Notebook](#running-the-notebook)
-- [Running the Flask App](#running-the-flask-app)
-- [Usage Scenarios](#usage-scenarios)
-- [Model Performance](#model-performance)
-- [Project Epics & Stories](#project-epics--stories)
-- [Future Scope](#future-scope)
+- [Human Development Index (HDI) Prediction — ML Web Application](#human-development-index-hdi-prediction--ml-web-application)
+  - [Table of Contents](#table-of-contents)
+  - [Overview](#overview)
+  - [Project Structure](#project-structure)
+  - [Entity-Relationship Diagram](#entity-relationship-diagram)
+  - [Tech Stack](#tech-stack)
+  - [Dataset](#dataset)
+  - [Machine Learning Workflow](#machine-learning-workflow)
+  - [Setup \& Installation](#setup--installation)
+  - [Running the Notebook](#running-the-notebook)
+  - [Running the Flask App](#running-the-flask-app)
+  - [Usage Scenarios](#usage-scenarios)
+  - [Model Performance](#model-performance)
+  - [Project Epics \& Stories](#project-epics--stories)
+  - [Future Scope](#future-scope)
 
 ---
 
@@ -323,37 +325,3 @@ updates.)
 
 ---
 
-## Pushing to GitHub
-
-This folder is already a self-contained Git repository (or run `git init`
-inside it if you're starting fresh). To push it to your own GitHub repo:
-
-```bash
-cd "ML - 0027 - Human Development Index"
-
-# Only if not already a git repo:
-git init
-git add .
-git commit -m "Initial commit: HDI prediction ML project"
-
-# Create an empty repository on GitHub first (no README/license), then:
-git branch -M main
-git remote add origin https://github.com/<your-username>/<your-repo-name>.git
-git push -u origin main
-```
-
-If GitHub asks for authentication, use a
-[Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)
-in place of your password, or push via SSH if you have an SSH key set up
-with your GitHub account.
-
----
-
-### Summary
-
-This project delivers an end-to-end machine learning pipeline — from raw
-data to a deployed prediction interface — for estimating a country's Human
-Development Index. It demonstrates the full lifecycle of a data science
-project: data understanding, cleaning, visualization, model training,
-evaluation, and deployment, packaged into a clean, maintainable, and
-scalable folder structure.
