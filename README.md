@@ -7,7 +7,7 @@ expectancy, education, and income indicators. Built with **Scikit-learn**
 (Linear Regression) and deployed through a **Flask** web interface.
 
 ---
-
+Project video Url : https://youtu.be/QeJ3HT0UWyI
 ## Table of Contents
 
 - [Human Development Index (HDI) Prediction — ML Web Application](#human-development-index-hdi-prediction--ml-web-application)
