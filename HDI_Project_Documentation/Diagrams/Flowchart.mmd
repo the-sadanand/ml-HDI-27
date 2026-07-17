@@ -1,0 +1,8 @@
+flowchart TD
+    A[Load Dataset] --> B[Clean and Encode Features]
+    B --> C[Split Train/Test Data]
+    C --> D[Train Linear Regression Model]
+    D --> E[Evaluate HDI Score]
+    E --> F[Save Pickle Artifacts]
+    F --> G[Flask Prediction Interface]
+    G --> H[Display HDI Score and Category]

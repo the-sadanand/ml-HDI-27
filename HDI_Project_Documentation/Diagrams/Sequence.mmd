@@ -1,0 +1,8 @@
+sequenceDiagram
+    participant U as User
+    participant F as Flask App
+    participant M as Model
+    U->>F: Submit indicator values
+    F->>M: Encode country and run prediction
+    M-->>F: Return HDI score
+    F-->>U: Show score and category
